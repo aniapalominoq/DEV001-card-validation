@@ -1,38 +1,37 @@
-// aqui hacemos el objeto validator
-
 const validator = {
   isValid(creditCardNumber) {
     const arrayI = creditCardNumber.split("");
     const array_nuevo = [];
     //alert(arrayI);
-    console.log(`recibo del ${arrayI}`);
-
     for (let i = 0; i < arrayI.length; i++) {
       // confirm(arrayI[i]);
-      if (i % 2 === 1) {
-        // Ingresan los que son de posicion impar y el cero
+      if (i % 2 == 0 || i == 0) {
+        // Ingresan los que son par y el cero
         let suma = arrayI[i] * 2;
         if (suma >= 10) {
-          array_nuevo.push(suma - 9);
+          array_nuevo.push((suma % 10) + Math.trunc(suma / 10));
+          console.log(suma);
         } else {
           array_nuevo.push(suma);
         }
-        console.log(`digito=${suma}:suma=${suma - 9}`);
       } else {
-        array_nuevo.push(arrayI[i]);
+        array_nuevo.push(`${arrayI[i]}`);
       }
     }
-    console.log(`arreglo nuevo ${array_nuevo}`);
-
+    console.log(array_nuevo);
+    // alert(array_nuevo);
     let result = 0;
     let sale;
-
     for (let x = 0; x < array_nuevo.length; x++) {
       result = result + parseInt(array_nuevo[x]);
     }
-    console.log(` es:${result}`);
-    sale = result % 10 === 0 ? true : false;
-
+    console.log(result);
+    // alert(result);
+    if (result % 10 === 0) {
+      sale = true;
+    } else {
+      sale = false;
+    }
     return sale;
   },
 
