@@ -1,0 +1,199 @@
+/*---------inicio:tamaño de caja desde el borde-------------*/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/*---------------------final------------------------------*/
+
+body {
+  background: #4776e6;
+  background: -webkit-linear-gradient(to left, #4776e6, #8e54e9);
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.flex-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-item {
+  display: flex;
+  flex-grow: 0;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: rem;
+}
+.card {
+  display: none;
+  border: 1px solid #ffff;
+  border-radius: 10px;
+  flex-grow: 1;
+  width: 350px;
+  flex-basis: 200px;
+  margin-bottom: 20px;
+}
+
+/*------------estilos para la tarjeta*/
+
+/*---- cara de la tarjeta-----*/
+.face > * {
+}
+.nombre_banco {
+  margin-right: 20px;
+  text-align: right;
+}
+.chip {
+  margin-left: 30px;
+  width: 54px;
+  height: 42px;
+}
+.wifi {
+  margin-left: 295px;
+  width: 33px;
+  height: 33px;
+}
+.importante {
+  display: flex;
+}
+.importante:nth-child(2) {
+  flex-grow: 2;
+}
+.numero_tarjeta {
+  font-size: 1.5em;
+  text-align: center;
+}
+.back > * {
+}
+.barra-magnetica {
+  margin-top: 25px;
+  height: 36px;
+  width: 350;
+  background-color: #0c0b0b;
+}
+.ccv {
+  margin-top: 15px;
+  margin-left: 30px;
+  width: 170px;
+  height: 31px;
+  background-color: #fff;
+  text-align: right;
+}
+.texto {
+  font-size: 0.6em;
+  text-align: justify;
+  width: 341px;
+  height: 66px;
+  color: #fff;
+}
+
+/*--------------fin tarjeta--------------------------*/
+
+/* formato para el formulario de validadión*/
+h2 {
+  text-align: center;
+  color: #8e54e9;
+  margin: 10px 0;
+  font-weight: 800;
+}
+.formulario {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 100%;
+
+  background-color: #fff;
+  font-size: 1.3rem;
+  border: 2px solid #fff;
+  border-radius: 2.5rem 0 2.5rem 0;
+  box-shadow: 0.9rem 0.9rem 2rem #17181d96;
+}
+
+.formulario .junto {
+  position: relative;
+  margin: 45px;
+}
+input {
+  background: none;
+  color: #a5a1a1;
+  font-size: 1.3rem;
+  padding: 0.6rem 0.6rem 0.5rem 0.1rem;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid#a5a1a1;
+  resize: none;
+}
+input:focus {
+  outline: none;
+  color: rgb(94, 93, 93);
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  position: absolute;
+  top: -14px;
+  font-size: 12px;
+  color: #8e54e9;
+  font-weight: 800;
+}
+label {
+  color: #a5a1a1;
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease all;
+  pointer-events: none;
+}
+.base {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+input:focus ~ .base::before {
+  width: 100%;
+}
+.base::before {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  transition: 0.3 ease all;
+  left: 0%;
+}
+
+.formulario button {
+  /*fondo*/
+  background: #4776e6;
+  background: -webkit-linear-gradient(to left, #4776e6, #8e54e9);
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  /*--------------------------*/
+  display: block;
+  width: 200px;
+  height: 40px;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  margin: 5px auto;
+  box-shadow: 0.9rem 0.9rem 2rem #17181d63;
+}
+.formulario button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: none;
+}
+/*----------------------------------*/

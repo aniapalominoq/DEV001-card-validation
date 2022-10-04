@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tarjeta de crédito válida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="flex-container">
+      <!--face de la tarjeta-->
+
+      <article class="flex-item">
+        <div class="card face">
+          <div class="nombre_banco">
+            <p id="nombre_banco">MPQ</p>
+          </div>
+          <div class="chip"><img src="../imagen/chip.png" alt="chip" /></div>
+          <div class="wifi"><img src="../imagen/wifi.png" alt="" /></div>
+          <div class="numero_tarjeta">
+            <p id="numero_tarjeta">4137 8947 1175 5904</p>
+          </div>
+          <div class="importante">
+            <img src="../imagen/flecha.png" alt="fecha" />
+            <p id="titulo_fecha">Vence fin de</p>
+            <p id="fecha">MM/AA</p>
+          </div>
+          <div>
+            <p id="nombre_cliente">Ania Palomino</p>
+          </div>
+        </div>
+        <!--back de la tarjeta-->
+        <div class="card back">
+          <div class="barra-magnetica"><p>........</p></div>
+          <div class="ccv"><p>123</p></div>
+          <div class="texto">
+            <p>
+              <small>
+                Esta Tarjeta ha sido emitida por Mpq y es propiedad de este.Debe
+                ser devuelta si así lo solicita. Use esta tarjeta para realizar
+                comparas en establecimientos afiliados a Visa.La utilizacion de
+                esta tarjeta supone la aceptacion del convenio suscrito entre el
+                titular e Mpq. Si usted encuentra esta tarjeta,agradeceremos se
+                sirva entregarla en cualquiera de las oficinas de Mpq o llamenos
+                al teléfono(01)3217000.</small
+              >
+            </p>
+          </div>
+          <a href="#">www.Mpq.com</a>
+        </div>
+      </article>
+      <!--formulario que ingresa datos de la tarjeta-->
+      <article class="flex-item">
+        <form action="" id="formulario" class="formulario">
+          <div class="form">
+            <h2>Formulario Validacion</h2>
+            <div class="junto">
+              <input type="text" id="card_number" required maxlength="16" />
+              <span class="base"></span>
+              <label>N° tarjeta </label>
+            </div>
+            <div class="junto">
+              <input type="text" id="card_nombre" required />
+              <span class="base"></span>
+              <label>Nombre </label>
+            </div>
+            <div class="junto">
+              <input type="month" id="card_fecha" required value="" />
+              <span class="base"></span>
+              <label>Fecha Vencimiento </label>
+            </div>
+            <div class="junto">
+              <input type="number" id="card_CCV" required />
+              <span class="base"></span>
+              <label>CCV</label>
+            </div>
+
+            <button id="validar">validar</button>
+          </div>
+        </form>
+      </article>
+    </main>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
