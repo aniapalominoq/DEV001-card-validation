@@ -9,43 +9,53 @@
     <main class="flex-container">
       <!--face de la tarjeta-->
 
-      <article class="flex-item">
-        <div class="card face">
-          <div class="nombre_banco">
-            <p id="nombre_banco">MPQ</p>
+      <article class="flex-item ventana-contenedor" id="miVentana">
+        <div class="ventana ventana-cerrar">
+          <p class="cerrar">X</p>
+          <div class="tarjetas">
+            <h2>Resultado</h2>
+            <p id="resultado">aqui resultado</p>
+            <div class="card face">
+              <div class="nombre_banco">
+                <p id="nombre_banco">MPQ</p>
+              </div>
+              <div class="chip">
+                <img src="../imagen/chip.png" alt="chip" />
+              </div>
+              <div class="wifi"><img src="../imagen/wifi.png" alt="" /></div>
+              <div class="numero_tarjeta">
+                <p id="numero_tarjeta">4137 8947 1175 5904</p>
+              </div>
+              <div class="importante">
+                <img src="../imagen/flecha.png" alt="fecha" />
+                <p id="titulo_fecha">Vence fin de</p>
+                <p id="fecha">MM/AA</p>
+              </div>
+              <div>
+                <p id="nombre_cliente">Ania Palomino</p>
+              </div>
+            </div>
+            <!--back de la tarjeta-->
+            <div class="card back">
+              <div class="barra-magnetica"><p>........</p></div>
+              <div class="ccv"><p>123</p></div>
+              <div class="texto">
+                <p>
+                  <small>
+                    Esta Tarjeta ha sido emitida por Mpq y es propiedad de
+                    este.Debe ser devuelta si así lo solicita. Use esta tarjeta
+                    para realizar comparas en establecimientos afiliados a
+                    Visa.La utilizacion de esta tarjeta supone la aceptacion del
+                    convenio suscrito entre el titular e Mpq. Si usted encuentra
+                    esta tarjeta,agradeceremos se sirva entregarla en cualquiera
+                    de las oficinas de Mpq o llamenos al
+                    teléfono(01)3217000.</small
+                  >
+                </p>
+              </div>
+              <a href="#">www.Mpq.com</a>
+            </div>
           </div>
-          <div class="chip"><img src="../imagen/chip.png" alt="chip" /></div>
-          <div class="wifi"><img src="../imagen/wifi.png" alt="" /></div>
-          <div class="numero_tarjeta">
-            <p id="numero_tarjeta">4137 8947 1175 5904</p>
-          </div>
-          <div class="importante">
-            <img src="../imagen/flecha.png" alt="fecha" />
-            <p id="titulo_fecha">Vence fin de</p>
-            <p id="fecha">MM/AA</p>
-          </div>
-          <div>
-            <p id="nombre_cliente">Ania Palomino</p>
-          </div>
-        </div>
-        <!--back de la tarjeta-->
-        <div class="card back">
-          <div class="barra-magnetica"><p>........</p></div>
-          <div class="ccv"><p>123</p></div>
-          <div class="texto">
-            <p>
-              <small>
-                Esta Tarjeta ha sido emitida por Mpq y es propiedad de este.Debe
-                ser devuelta si así lo solicita. Use esta tarjeta para realizar
-                comparas en establecimientos afiliados a Visa.La utilizacion de
-                esta tarjeta supone la aceptacion del convenio suscrito entre el
-                titular e Mpq. Si usted encuentra esta tarjeta,agradeceremos se
-                sirva entregarla en cualquiera de las oficinas de Mpq o llamenos
-                al teléfono(01)3217000.</small
-              >
-            </p>
-          </div>
-          <a href="#">www.Mpq.com</a>
         </div>
       </article>
       <!--formulario que ingresa datos de la tarjeta-->
