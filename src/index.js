@@ -8,8 +8,6 @@ function inputvalue() {
   const $remplazar = document.getElementById("resultado");
   const $texto = document.getElementById("card_number");
 
-  //let expReg = /^[0-9]*(\.?)[ 0-9]+$/;
-
   if (validator.isValid(creditCardNumber) == true) {
     $texto.value = validator.maskify(creditCardNumber);
     $remplazar.outerHTML =
@@ -20,6 +18,39 @@ function inputvalue() {
       '<p id="resultado">INCORRECTO,la tarjeta NO es valida</p>';
   }
 }
+
+/* para la ventana pequeña*/
+const $cerrar = document.querySelector(".cerrar");
+const $abrir = document.getElementById("validar");
+const $ventana = document.querySelector(".ventana");
+const $ventanaP = document.querySelector(".ventana-contenedor");
+
+$abrir.addEventListener("click", function () {
+  $ventanaP.style.opacity = "1";
+  $ventanaP.style.visibility = "visible";
+  $ventana.classList.toggle("ventana-cerrar");
+});
+
+$cerrar.addEventListener("click", function () {
+  $ventana.classList.toggle("ventana-cerrar");
+
+  setTimeout(function () {
+    $ventanaP.style.opacity = "0";
+    $ventanaP.style.visibility = "hidden";
+  }, 500);
+});
+/*el siguiente es para que cuando haga click fuera de la ventana tambien se cerrara*/
+
+window.addEventListener("click", function (e) {
+  if (e.target == $ventanaP) {
+    $ventana.classList.toggle("ventana-cerrar");
+
+    setTimeout(function () {
+      $ventanaP.style.opacity = "0";
+      $ventanaP.style.visibility = "hidden";
+    }, 500);
+  }
+});
 
 /*const input = document.querySelector("input");
 const log = document.getElementById("valores");
