@@ -35,14 +35,15 @@ body {
   margin: 0rem;
 }
 .card {
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+
   border-radius: 10px;
   flex-grow: 1;
   width: 350px;
   flex-basis: 200px;
   margin-bottom: 20px;
-  background-image: url(plomo.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  box-shadow: 0.9rem 0.9rem 2rem #17181d63;
+  color: #fff;
 }
 
 /*------------estilos para la tarjeta*/
@@ -101,7 +102,7 @@ body {
 /*--------------fin tarjeta--------------------------*/
 
 /* formato para el formulario de validadión*/
-h2 {
+.titulo-form {
   text-align: center;
   color: #8e54e9;
   margin: 10px 0;
@@ -122,7 +123,7 @@ h2 {
 
 .formulario .junto {
   position: relative;
-  margin: 45px;
+  margin: 35px;
 }
 input {
   background: none;
@@ -178,9 +179,8 @@ input:focus ~ .base::before {
 
 .formulario button {
   /*fondo*/
-  background: #4776e6;
-  background: -webkit-linear-gradient(to left, #4776e6, #8e54e9);
   background: linear-gradient(to left, #4776e6, #8e54e9);
+
   /*--------------------------*/
   display: block;
   width: 200px;
@@ -194,7 +194,10 @@ input:focus ~ .base::before {
 }
 .formulario button:hover {
   cursor: pointer;
-  opacity: 0.8;
+  background: linear-gradient(to left, #4777e681, #8d54e980);
+  color: #8e54e9;
+  font-weight: bold;
+
   box-shadow: none;
 }
 /*----------------------------------*/
@@ -230,12 +233,15 @@ input:focus ~ .base::before {
   border-radius: 50%;
   margin: 1rem;
 }
+.titulo-ventana {
+  text-align: center;
+
+  color: #000;
+  font-weight: 800;
+}
 #resultado {
-  background: #4776e6;
-  background: -webkit-linear-gradient(to left, #4776e6, #8e54e9);
-  background: linear-gradient(to left, #4776e6, #8e54e9);
-  padding: 10px;
-  border-radius: 5px;
+  background-color: #adb5bd;
+  padding: 8px;
   color: #fff;
 }
 
@@ -261,4 +267,22 @@ input:focus ~ .base::before {
   margin-right: auto;
   display: flex;
   flex-direction: column;
+}
+.alerta {
+  background-color: #ffc107;
+  color: #fff;
+  border-bottom: 1px solid #a5a1a1;
+  border-left: 1px solid #a5a1a1;
+  border-right: 1px solid #a5a1a1;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 100px;
+  padding-bottom: 0.3rem;
+  padding-left: 0.65rem;
+  border-radius: 0rem;
+  border-radius;
+  z-index: 2;
+  box-shadow: 0.9rem 0.9rem 2rem #17181d63;
 }

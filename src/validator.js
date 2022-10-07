@@ -5,7 +5,7 @@ const validator = {
     const arrayI = creditCardNumber.split("");
     const array_nuevo = [];
     //alert(arrayI);
-    console.log(`recibo del ${arrayI}`);
+    //console.log(`recibo del ${arrayI}`);
 
     for (let i = 0; i < arrayI.length; i++) {
       // confirm(arrayI[i]);
@@ -17,12 +17,12 @@ const validator = {
         } else {
           array_nuevo.push(suma);
         }
-        console.log(`digito=${suma}:suma=${suma - 9}`);
+        //console.log(`digito=${suma}:suma=${suma - 9}`);
       } else {
         array_nuevo.push(arrayI[i]);
       }
     }
-    console.log(`arreglo nuevo ${array_nuevo}`);
+    // console.log(`arreglo nuevo ${array_nuevo}`);
 
     let result = 0;
     let sale;
@@ -30,7 +30,7 @@ const validator = {
     for (let x = 0; x < array_nuevo.length; x++) {
       result = result + parseInt(array_nuevo[x]);
     }
-    console.log(` es:${result}`);
+    //console.log(` es:${result}`);
     sale = result % 10 === 0 ? true : false;
 
     return sale;
