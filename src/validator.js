@@ -11,7 +11,7 @@ const validator = {
       // confirm(arrayI[i]);
       if (i % 2 === 1) {
         // Ingresan los que son de posicion impar y el cero
-        let suma = arrayI[i] * 2;
+        let suma = parseInt(arrayI[i]) * 2;
         if (suma >= 10) {
           array_nuevo.push(suma - 9);
         } else {
@@ -19,7 +19,7 @@ const validator = {
         }
         //console.log(`digito=${suma}:suma=${suma - 9}`);
       } else {
-        array_nuevo.push(arrayI[i]);
+        array_nuevo.push(parseInt(arrayI[i]));
       }
     }
     // console.log(`arreglo nuevo ${array_nuevo}`);
@@ -28,7 +28,7 @@ const validator = {
     let sale;
 
     for (let x = 0; x < array_nuevo.length; x++) {
-      result = result + parseInt(array_nuevo[x]);
+      result = result + array_nuevo[x];
     }
     //console.log(` es:${result}`);
     sale = result % 10 === 0 ? true : false;
@@ -46,9 +46,12 @@ const validator = {
         arr.push(cardValue[i]);
       }
     }
+
     //alert(cardValue);
     return arr.join("");
   },
 };
 // al objeto  validator anteponemos export y default  para usarla como objeto por defecto cuando lo importemos.
+
+validator.isValid("4213550123670241");
 export default validator;

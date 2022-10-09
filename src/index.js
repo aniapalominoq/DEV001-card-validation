@@ -62,7 +62,7 @@ function validaNumero() {
     document.getElementById("card_number").value = "";
 
     document.getElementById("mensaje").innerHTML =
-      " ⚠️Valor ingresado, no coindide";
+      " ⚠️Valor no permitido,acepta solo números";
     document.getElementById("mensaje").style.visibility = "visible";
     //alert("No es numérico");
   }
@@ -82,7 +82,7 @@ function validaFecha() {
     document.getElementById("card_fecha").value = "";
 
     document.getElementById("mensaje2").innerHTML =
-      " ⚠️Valor ingresado, no coindide";
+      " ⚠️Valor No permitido. Ejem: MM/YYYY";
 
     document.getElementById("mensaje2").style.visibility = "visible";
     //alert("no soy fecha");
@@ -103,7 +103,7 @@ function validaCcv() {
   } else {
     document.getElementById("card_ccv").value = "";
     document.getElementById("mensaje3").innerHTML =
-      " ⚠️Valor ingresado, no coindide";
+      " ⚠️Valor No permitido,acepta solo números";
     document.getElementById("mensaje3").style.visibility = "visible";
     //alert("incorrecto");
   }
@@ -121,48 +121,64 @@ function validaNombre() {
   } else {
     document.getElementById("nombre_cliente").value = "";
     document.getElementById("mensaje1").innerHTML =
-      " ⚠️Valor ingresado, no coindide";
+      " ⚠️Valor invalido.Ejem: Melania Palomino";
     document.getElementById("mensaje1").style.visibility = "visible";
     //alert("incorrecto");
   }
 }
 
 function resultado() {
-  // declaro variables para manejar otra ventana
-  const $cerrar = document.querySelector(".cerrar");
-  const $abrir = document.getElementById("validar");
-  const $ventana = document.querySelector(".ventana");
-  const $ventanaP = document.querySelector(".ventana-contenedor");
+  if (
+    $numeroTarjeta.value == "" ||
+    $nombre.value == "" ||
+    $fechaVencimiento.value == "" ||
+    $ccv.value == ""
+  ) {
+    alert("Complete los datos ");
+    location.reload();
+  } else {
+    // declaro variables para manejar otra ventana
+    const $cerrar = document.querySelector(".cerrar");
+    const $abrir = document.getElementById("validar");
+    const $ventana = document.querySelector(".ventana");
+    const $ventanaP = document.querySelector(".ventana-contenedor");
 
-  $abrir.addEventListener("click", function (e) {
-    e.preventDefault();
-    $ventanaP.style.opacity = "1";
-    $ventanaP.style.visibility = "visible";
-    // para que lo carge de nuevo
-    $ventana.classList.toggle("ventana-cerrar");
-  });
+    $abrir.addEventListener("click", function () {
+      $ventanaP.style.opacity = "1";
+      $ventanaP.style.visibility = "visible";
+      // para que lo carge de nuevo
+      $ventana.classList.toggle("ventana-cerrar");
+    });
 
-  $cerrar.addEventListener("click", function () {
-    // para que lo carge de nuevo
-    $ventana.classList.toggle("ventana-cerrar");
-
-    setTimeout(function () {
-      $ventanaP.style.opacity = "0";
-      $ventanaP.style.visibility = "hidden";
-    }, 500);
-  });
-  //el siguiente es para que cuando haga click fuera de la ventana tambien se cerrara
-
-  window.addEventListener("click", function (e) {
-    if (e.target == $ventanaP) {
+    $cerrar.addEventListener("click", function () {
+      // para que lo carge de nuevo
       $ventana.classList.toggle("ventana-cerrar");
 
       setTimeout(function () {
         $ventanaP.style.opacity = "0";
         $ventanaP.style.visibility = "hidden";
       }, 500);
-    }
-  });
+
+      location.reload();
+      $numeroTarjeta.value == "";
+      $nombre.value == "";
+      $fechaVencimiento.value == "";
+      $ccv.value == "";
+    });
+    //el siguiente es para que cuando haga click fuera de la ventana tambien se cerrara
+
+    window.addEventListener("click", function (e) {
+      if (e.target == $ventanaP) {
+        $ventana.classList.toggle("ventana-cerrar");
+
+        setTimeout(function () {
+          $ventanaP.style.opacity = "0";
+          $ventanaP.style.visibility = "hidden";
+        }, 500);
+      }
+      //location.reload();
+    });
+  }
 }
 // ----------------llamo al objeto validator------------------
 
