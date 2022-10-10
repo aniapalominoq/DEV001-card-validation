@@ -78,7 +78,7 @@ function validaFecha() {
     "(((0[123456789]|10|11|12)/(([1][9][0-9][0-9])|([2][0-9][0-9][0-9]))))"
   );
 
-  if (reg.test(creditCardDate) == true) {
+  if (reg.test(creditCardDate)) {
     document.getElementById("mensaje2").style.visibility = "hidden";
     // alert("soy fecha");
     document.getElementById("fecha").innerHTML = creditCardDate;
@@ -116,7 +116,7 @@ function validaCcv() {
 //4.VALIDAR NOMBRE CLIENTE
 function validaNombre() {
   let creditCardName = $nombre.value;
-  let valoresAceptados = /[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?(( |\-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?)/;
+  let valoresAceptados = /[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?(( |-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?)/;
   if (creditCardName.match(valoresAceptados)) {
     document.getElementById("mensaje1").style.visibility = "hidden";
     document.getElementById("nombre_cliente").innerHTML = creditCardName;
