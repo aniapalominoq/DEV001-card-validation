@@ -42,12 +42,13 @@ function validaNumero() {
 
     //alert("Es numérico");
     // busca,mos el resultado con validator--------------------------------------------------------
-    if (validator.isValid(creditCardNumber) == true) {
+    if (validator.isValid(creditCardNumber)) {
       document.getElementById("numero_tarjeta").innerHTML = creditCardNumber;
       $numeroTarjeta.value = validator.maskify(creditCardNumber);
       $remplazar.outerHTML =
         '<p id="resultado">✔️CORRECTO,la tarjeta es valida</p>';
       document.getElementById("resultado").style.backgroundColor = "#198754";
+
       // lo esscribo en la tarjeta
     } else {
       document.getElementById("numero_tarjeta").innerHTML = creditCardNumber;
@@ -55,6 +56,7 @@ function validaNumero() {
       $remplazar.outerHTML =
         '<p id="resultados">❌INCORRECTO,la tarjeta NO es valida</p>';
       document.getElementById("resultados").style.backgroundColor = "#dc3545";
+      document.getElementById("mensaje").style.visibility = "visible";
     }
 
     //------------------------------------------------------------
@@ -72,7 +74,9 @@ function validaNumero() {
 
 function validaFecha() {
   let creditCardDate = $fechaVencimiento.value;
-  let reg = new RegExp("(0[1-9]|10|11|12)/20[0-9]{2}$");
+  let reg = new RegExp(
+    "(((0[123456789]|10|11|12)/(([1][9][0-9][0-9])|([2][0-9][0-9][0-9]))))"
+  );
 
   if (reg.test(creditCardDate) == true) {
     document.getElementById("mensaje2").style.visibility = "hidden";
@@ -112,7 +116,7 @@ function validaCcv() {
 //4.VALIDAR NOMBRE CLIENTE
 function validaNombre() {
   let creditCardName = $nombre.value;
-  let valoresAceptados = /^[a-z ,.'-]+$/;
+  let valoresAceptados = /[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?(( |\-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?)/;
   if (creditCardName.match(valoresAceptados)) {
     document.getElementById("mensaje1").style.visibility = "hidden";
     document.getElementById("nombre_cliente").innerHTML = creditCardName;
@@ -128,57 +132,48 @@ function validaNombre() {
 }
 
 function resultado() {
-  if (
-    $numeroTarjeta.value == "" ||
-    $nombre.value == "" ||
-    $fechaVencimiento.value == "" ||
-    $ccv.value == ""
-  ) {
-    alert("Complete los datos ");
-    location.reload();
-  } else {
-    // declaro variables para manejar otra ventana
-    const $cerrar = document.querySelector(".cerrar");
-    const $abrir = document.getElementById("validar");
-    const $ventana = document.querySelector(".ventana");
-    const $ventanaP = document.querySelector(".ventana-contenedor");
+  // declaro variables para manejar otra ventana
+  const $cerrar = document.querySelector(".cerrar");
+  const $abrir = document.getElementById("validar");
+  const $ventana = document.querySelector(".ventana");
+  const $ventanaP = document.querySelector(".ventana-contenedor");
 
-    $abrir.addEventListener("click", function () {
-      $ventanaP.style.opacity = "1";
-      $ventanaP.style.visibility = "visible";
-      // para que lo carge de nuevo
-      $ventana.classList.toggle("ventana-cerrar");
-    });
+  $abrir.addEventListener("click", function () {
+    $ventanaP.style.opacity = "1";
+    $ventanaP.style.visibility = "visible";
+    // para que lo carge de nuevo
+    $ventana.classList.toggle("ventana-cerrar");
+  });
 
-    $cerrar.addEventListener("click", function () {
-      // para que lo carge de nuevo
+  $cerrar.addEventListener("click", function () {
+    // para que lo carge de nuevo
+    $ventana.classList.toggle("ventana-cerrar");
+
+    setTimeout(function () {
+      $ventanaP.style.opacity = "0";
+      $ventanaP.style.visibility = "hidden";
+    }, 500);
+    /*
+      location.reload();
+      $numeroTarjeta.value == "";
+      $nombre.value == "";
+      $fechaVencimiento.value == "";
+      $ccv.value == "";
+      */
+  });
+  //el siguiente es para que cuando haga click fuera de la ventana tambien se cerrara
+
+  window.addEventListener("click", function (e) {
+    if (e.target == $ventanaP) {
       $ventana.classList.toggle("ventana-cerrar");
 
       setTimeout(function () {
         $ventanaP.style.opacity = "0";
         $ventanaP.style.visibility = "hidden";
       }, 500);
-
-      location.reload();
-      $numeroTarjeta.value == "";
-      $nombre.value == "";
-      $fechaVencimiento.value == "";
-      $ccv.value == "";
-    });
-    //el siguiente es para que cuando haga click fuera de la ventana tambien se cerrara
-
-    window.addEventListener("click", function (e) {
-      if (e.target == $ventanaP) {
-        $ventana.classList.toggle("ventana-cerrar");
-
-        setTimeout(function () {
-          $ventanaP.style.opacity = "0";
-          $ventanaP.style.visibility = "hidden";
-        }, 500);
-      }
-      //location.reload();
-    });
-  }
+    }
+    //location.reload();
+  });
 }
 // ----------------llamo al objeto validator------------------
 
