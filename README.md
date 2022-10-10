@@ -40,17 +40,18 @@ verificar antes de usar una tarjeta.
 - [Mi-prototito](https://www.figma.com/proto/QYHE0sz1P1WbB6VMeGMFoK/Untitled?node-id=0%3A1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=39%3A23)
 - Pasos :
 
-<span style="font-size: 50px;color:#970590;font-weight:700 ;">1</span>
+# <span style="font-size: 50px;color:#970590;font-weight:700 ;">1</span>
 
 Ingresar a la siguiente direccion [Click]() .
 
-<span style="font-size: 50px;color:#970590;font-weight:700 ;">2</span>
+# <span style="font-size: 50px;color:#970590;font-weight:700 ;">2</span>
 
 Se muestra el siguiente formulario.
 
 ![formlulario](form.PNG)
 
-<span style="font-size: 50px;color:#970590;font-weight:700 ;">3</span>
+# <span style="font-size: 50px;color:#970590;font-weight:700 ;">3</span>
+
 completar con todos los campos solicitados como muestra la siguiente imagen y pulsar en el boton <button style="  background: linear-gradient(to left, #4776e6, #8e54e9);
   width: 100px;
   height: 20px;
@@ -61,7 +62,7 @@ completar con todos los campos solicitados como muestra la siguiente imagen y pu
 
 ![formlulario-lleno](prueba.PNG)
 
-<span style="font-size: 50px;color:#970590;font-weight:700 ;">4</span>
+# <span style="font-size: 50px;color:#970590;font-weight:700 ;">4</span>
 
 En la siguiente imagen se muestra como sale la respuesta de la validez de la tarjeta.
 
