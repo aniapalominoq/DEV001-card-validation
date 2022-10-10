@@ -50,28 +50,8 @@ const validator = {
     //alert(cardValue);
     return arr.join("");
   },
-
-  franchise(creditCardNumber) {
-    let anyString = creditCardNumber;
-
-    const arra4 = ["1800", "2014", "2131", "2149", "6011"];
-    const arra3 = ["300", "301", "302", "303", "304", "305"];
-    const arra2 = ["34", "36", "37", "38", "51", "52", "53", "54", "55"];
-    const arra1 = ["3", "4"];
-
-    //para los que empiezan en 4 cifras 1800 2014 2131 2149
-    for (let index = 0; index < arra4.length; index++) {
-      if (anyString.substring(0, 4) === arra4[index]) {
-      }
-    }
-
-    //para los que empiezan en 3 cifras 300-305
-
-    //para los que  empiezan en dos cifras34 36 37 38 51 52 53 54 55
-    //para los que empiezan en una cifra 3 4
-  },
 };
+
 // al objeto  validator anteponemos export y default  para usarla como objeto por defecto cuando lo importemos.
 
-validator.isValid("4213550123670241");
 export default validator;
