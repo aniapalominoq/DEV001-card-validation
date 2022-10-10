@@ -13,32 +13,27 @@
         <div class="ventana ventana-cerrar">
           <p class="cerrar">X</p>
           <div class="tarjetas">
-            <h2>Resultado</h2>
-            <p id="resultado">aqui resultado</p>
+            <h2 class="titulo-ventana">Resultado</h2>
+            <p id="resultado" class="resultado">resultado</p>
             <div class="card face">
               <div class="nombre_banco">
                 <p id="nombre_banco">MPQ</p>
               </div>
-              <div class="chip">
-                <img src="../imagen/chip.png" alt="chip" />
-              </div>
-              <div class="wifi"><img src="../imagen/wifi.png" alt="" /></div>
-              <div class="numero_tarjeta">
-                <p id="numero_tarjeta">4137 8947 1175 5904</p>
+              <div class="chip"></div>
+
+              <div class="numero_tarjeta" id="numero_tarjeta">
+                #### #### #### ####
               </div>
               <div class="importante">
-                <img src="../imagen/flecha.png" alt="fecha" />
-                <p id="titulo_fecha">Vence fin de</p>
-                <p id="fecha">MM/AA</p>
-              </div>
-              <div>
-                <p id="nombre_cliente">Ania Palomino</p>
+                <p id="nombre_cliente">******* ******</p>
+                <p id="titulo_fecha">VENCE FIN DE</p>
+                <p id="fecha">--/----</p>
               </div>
             </div>
             <!--back de la tarjeta-->
             <div class="card back">
-              <div class="barra-magnetica"><p>........</p></div>
-              <div class="ccv"><p>123</p></div>
+              <div class="barra-magnetica"><p>------------</p></div>
+              <div class="ccv" id="ccv"><p>123</p></div>
               <div class="texto">
                 <p>
                   <small>
@@ -60,33 +55,37 @@
       </article>
       <!--formulario que ingresa datos de la tarjeta-->
       <article class="flex-item">
-        <form action="" id="formulario" class="formulario">
+        <div id="formulario" class="formulario">
           <div class="form">
-            <h2>Formulario Validacion</h2>
+            <h2 class="titulo-form">Formulario Validacion</h2>
             <div class="junto">
-              <input type="text" id="card_number" required maxlength="16" />
+              <input type="text" id="card_number" maxlength="16" required />
               <span class="base"></span>
               <label>N° tarjeta </label>
+              <p class="alerta" id="mensaje">⚠️</p>
             </div>
             <div class="junto">
               <input type="text" id="card_nombre" required />
               <span class="base"></span>
               <label>Nombre </label>
+              <p class="alerta" id="mensaje1">⚠️</p>
             </div>
             <div class="junto">
-              <input type="month" id="card_fecha" required value="" />
+              <input type="text" id="card_fecha" maxlength="7" required />
               <span class="base"></span>
               <label>Fecha Vencimiento </label>
+              <p class="alerta" id="mensaje2">⚠️</p>
             </div>
             <div class="junto">
-              <input type="number" id="card_CCV" required />
+              <input type="text" id="card_ccv" maxlength="3" required />
               <span class="base"></span>
               <label>CCV</label>
+              <p class="alerta" id="mensaje3">⚠️</p>
             </div>
 
-            <button id="validar">validar</button>
+            <button id="validar">Validar</button>
           </div>
-        </form>
+        </div>
       </article>
     </main>
 
