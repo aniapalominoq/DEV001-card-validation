@@ -35,6 +35,7 @@ function limpiarInputs() {
 function validaNumero() {
   let creditCardNumber = $numeroTarjeta.value;
   const $remplazar = document.getElementById("resultado");
+  const $nombreBanco = document.getElementById("nombre_banco");
 
   let valoresAceptados = /^[0-9]+$/;
   if (creditCardNumber.match(valoresAceptados)) {
@@ -44,18 +45,21 @@ function validaNumero() {
     // busca,mos el resultado con validator--------------------------------------------------------
     if (validator.isValid(creditCardNumber)) {
       document.getElementById("numero_tarjeta").innerHTML = creditCardNumber;
+      $nombreBanco.innerHTML = validator.franchise(creditCardNumber);
       $numeroTarjeta.value = validator.maskify(creditCardNumber);
       $remplazar.outerHTML =
         '<p id="resultado">✔️CORRECTO,la tarjeta es valida</p>';
       document.getElementById("resultado").style.backgroundColor = "#198754";
-
+      document.getElementById("resultado").style.Color = "#fff";
       // lo esscribo en la tarjeta
     } else {
       document.getElementById("numero_tarjeta").innerHTML = creditCardNumber;
+      $nombreBanco.innerHTML = validator.franchise(creditCardNumber);
       $numeroTarjeta.value = validator.maskify(creditCardNumber);
       $remplazar.outerHTML =
         '<p id="resultados">❌INCORRECTO,la tarjeta NO es valida</p>';
-      document.getElementById("resultados").style.backgroundColor = "#dc3545";
+      document.getElementById("resultado").style.backgroundColor = "#dc3545";
+      document.getElementById("resultado").style.Color = "#fff";
       document.getElementById("mensaje").style.visibility = "visible";
     }
 
