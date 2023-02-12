@@ -42,7 +42,7 @@ verificar antes de usar una tarjeta.
 
 # <span style="font-size: 50px;color:#970590;font-weight:700 ;">1</span>
 
-Ingresar a la siguiente direccion [Click]() .
+Ingresar a la siguiente direccion [Click](https://aniapalominoq.github.io/DEV001-card-validation/) .
 
 # <span style="font-size: 50px;color:#970590;font-weight:700 ;">2</span>
 
